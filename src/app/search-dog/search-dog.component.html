@@ -1,0 +1,12 @@
+
+<mat-progress-spinner [mode]="'indeterminate'" *ngIf="loading$ | async"></mat-progress-spinner>
+<mat-form-field>
+  <mat-label>Breed:</mat-label>
+  <mat-select [(ngModel)]="selectedItem">
+    <mat-option *ngFor="let dog of options" [value]="dog" (click)="selectDog()">
+      {{dog}}
+    </mat-option>
+  </mat-select>
+  <mat-select-trigger> <img *ngIf="imageUrl != ''" class="dog-img" src="{{imageUrl}}" alt="Cachorro escolhido"> </mat-select-trigger>
+</mat-form-field>
+
